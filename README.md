@@ -38,7 +38,7 @@ population = [unit_id for unit_id in range(1, 10_000_001)]
 population_filter = dataset.field("unit_id").isin(population)
 dataset.dateset(parquet_path).to_table(population_filter)
 ```
-In earlier pyarrow versions, this was blazingly fast, but after v18, it has become up to 60 times slower. It is to the point
+In earlier pyarrow versions, this was blazingly fast, but after v18, it has become up to 40 times slower. It is to the point
 where we can't upgrade. Previously, our analytics services could handle large volumes of requests per minute, but now they freeze.
 
 ### Stats
