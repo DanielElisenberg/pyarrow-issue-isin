@@ -1,4 +1,3 @@
-# uv: pyarrow==15.0.2
 import pyarrow as pa
 import pyarrow.parquet as pq
 import os
@@ -31,7 +30,6 @@ for next_unit_id in range(1, total_rows + 1):
     start.append(random.randint(1, 365))
     stop.append(random.randint(1, 365))
 
-# Convert to pyarrow arrays
 table = pa.table(
     {
         "unit_id": pa.array(unit_id, type=pa.int64()),
@@ -43,8 +41,5 @@ table = pa.table(
 )
 
 print(f"Generated in-memory table with {table.num_rows:,} rows. Now writing...")
-
-# Write whole table to disk, partitioned by start_year
 pq.write_to_dataset(table, root_path=output_dir)
-
 print(f"✅ Done. Data written to: {output_dir}")
