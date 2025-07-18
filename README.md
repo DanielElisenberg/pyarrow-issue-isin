@@ -1,5 +1,7 @@
 # pyarrow-issue-isin
 
+# This was posted as a [pyarrow issue](https://github.com/apache/arrow/issues/46777#event-18226362346), and got resolved by the maintainers in version 21.0.0 <3 I added tests to verify this. Many thanks to the capable pyarrow maintainers.
+
 ### Introduction
 We use pyarrow at work for statistical analysis of big populations. One of the key features we
 use to achieve this is the incredibly fast predicate-pushdown-filters. We use these to only retrieve data for our

@@ -28,3 +28,8 @@ cd v20
 poetry update
 poetry run python read.py
 cd ..
+
+cd v21
+poetry update
+poetry run python read.py
+cd ..
